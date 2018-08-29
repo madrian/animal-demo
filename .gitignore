@@ -1,0 +1,9 @@
+*~
+*/target/*
+.settings/*
+*/.settings/*
+target
+*.idea
+*.swp
+*.bundle
+*.iml
