@@ -9,4 +9,6 @@ public interface Animal {
     String fly();
 
     String sing();
+
+    String swim();
 }

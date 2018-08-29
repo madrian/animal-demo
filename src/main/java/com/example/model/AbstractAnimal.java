@@ -23,6 +23,12 @@ public abstract class AbstractAnimal implements Animal {
         return message;
     }
 
+    public String swim() {
+        String message = "I am swimming.";
+        log(message);
+        return message;
+    }
+
     protected void log(String message) {
         System.out.println(message);
     }

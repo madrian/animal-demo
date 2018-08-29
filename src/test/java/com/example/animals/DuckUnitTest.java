@@ -4,14 +4,15 @@ import com.example.model.Animal;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
-public class BirdUnitTest {
+public class DuckUnitTest {
     private Animal animal;
 
     @Before
     public void setUp() {
-        animal = new Bird();
+        animal = new Duck();
     }
 
     @After
@@ -31,7 +32,7 @@ public class BirdUnitTest {
 
     @Test
     public void testSing() {
-        assertEquals("Tweet, tweet.", animal.sing());
+        assertEquals("Quack, quack.", animal.sing());
     }
 
     @Test
