@@ -11,12 +11,7 @@ public class Parrot extends Bird {
 
     public Parrot(ParrotType type) {
         this.type = type;
+        song = type.getSong();
     }
 
-    @Override
-    public String sing() {
-        String message = type.getSong();
-        log(message);
-        return message;
-    }
 }

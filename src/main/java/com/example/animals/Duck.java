@@ -5,10 +5,7 @@ package com.example.animals;
  */
 public class Duck extends Bird {
 
-    @Override
-    public String sing() {
-        String message = "Quack, quack.";
-        log(message);
-        return message;
+    public Duck() {
+        song = "Quack, quack.";
     }
 }

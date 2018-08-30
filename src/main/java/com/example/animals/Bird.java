@@ -5,12 +5,9 @@ import com.example.model.AbstractAnimal;
 /**
  * Bird implementation of an <code>Animal</code>.
  */
-class Bird extends AbstractAnimal {
+public class Bird extends AbstractAnimal {
 
-    @Override
-    public String sing() {
-        String message = "Tweet, tweet.";
-        log(message);
-        return message;
+    public Bird() {
+        song = "Tweet, tweet.";
     }
 }
