@@ -1,19 +1,18 @@
 package com.example.animals;
 
 import com.example.model.Animal;
-import com.example.model.ParrotType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class DoggyParrotUnitTest {
+public class CaterpillarUnitTest {
     private Animal animal;
 
     @Before
     public void setUp() {
-        animal = new Parrot(ParrotType.DOGGY_PARROT);
+        animal = new Caterpillar();
     }
 
     @After
@@ -28,16 +27,16 @@ public class DoggyParrotUnitTest {
 
     @Test
     public void testFly() {
-        assertEquals("I am flying.", animal.fly());
+        assertEquals("I cannot fly.", animal.fly());
+    }
+
+    @Test
+    public void testSing() {
+        assertEquals("I cannot sing.", animal.sing());
     }
 
     @Test
     public void testSwim() {
         assertEquals("I cannot swim.", animal.swim());
-    }
-
-    @Test
-    public void testSing() {
-        assertEquals("Woof, woof.", animal.sing());
     }
 }

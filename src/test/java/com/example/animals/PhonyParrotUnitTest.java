@@ -33,7 +33,7 @@ public class PhonyParrotUnitTest {
 
     @Test
     public void testSwim() {
-        assertEquals("I am swimming.", animal.swim());
+        assertEquals("I cannot swim.", animal.swim());
     }
 
     @Test
