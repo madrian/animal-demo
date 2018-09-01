@@ -44,4 +44,9 @@ public class Dolphin implements Animal {
     public String eatOwnKind() {
         return fish.eatOwnKind();
     }
+
+    @Override
+    public Animal morph() {
+        return this;
+    }
 }

@@ -14,9 +14,12 @@ public abstract class AbstractAnimal implements Animal {
     protected AnimalSize size;
 
     protected AbstractAnimal() {
+        //default abilities
         setAllAbilities();
         abilities.remove(Ability.MAKE_JOKE);
         abilities.remove(Ability.EAT_OWN_KIND);
+        abilities.remove(Ability.MORPH);
+
         song = Ability.SING.getMessage();
     }
 
@@ -67,6 +70,30 @@ public abstract class AbstractAnimal implements Animal {
         return message;
     }
 
+    @Override
+    public Animal morph() {
+        String message = canMorph() ? Ability.MORPH.getMessage()
+                : Ability.MORPH.getErrorMessage();
+        log(message);
+
+        return getMorphedAnimal();
+    }
+
+    /**
+     * Animals that has <code>Ability.MORPH</code> can override this method
+     * to get the new morphed Animal.
+     *
+     * <p>
+     *     For example, a <code>Caterpillar</code> can morph to a
+     *     <code>Butterfly</code> and should override this to return
+     *     a butterfly instance.
+     * </p>
+     * @return the morphed animal; defaults to itself if not overridden.
+     */
+    protected Animal getMorphedAnimal() {
+        return this;
+    }
+
     public void log(String message) {
         System.out.println(message);
     }
@@ -93,6 +120,10 @@ public abstract class AbstractAnimal implements Animal {
 
     protected boolean canEatOwnKind() {
         return abilities.contains(Ability.EAT_OWN_KIND);
+    }
+
+    protected boolean canMorph() {
+        return abilities.contains(Ability.MORPH);
     }
 
     protected void setAllAbilities() {

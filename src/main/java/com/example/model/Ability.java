@@ -7,7 +7,9 @@ public enum Ability {
     SING("I am singing.", "I cannot sing."),
 
     MAKE_JOKE("I have a joke.", "I don't have a joke."),
-    EAT_OWN_KIND("I eat my own kind.", "I don't eat my own kind.");
+    EAT_OWN_KIND("I eat my own kind.", "I don't eat my own kind."),
+
+    MORPH("I am morphing.", "I cannot morph.");
 
     Ability(String message, String errorMessage) {
         this.message = message;

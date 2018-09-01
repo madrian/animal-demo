@@ -50,4 +50,9 @@ public class Rooster implements Animal {
     public String eatOwnKind() {
         return chicken.eatOwnKind();
     }
+
+    @Override
+    public Animal morph() {
+        return this;
+    }
 }

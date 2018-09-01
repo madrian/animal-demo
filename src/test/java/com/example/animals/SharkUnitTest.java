@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class SharkUnitTest {
     private Shark animal;
@@ -61,5 +62,11 @@ public class SharkUnitTest {
     @Test
     public void testSize() {
         assertEquals(AnimalSize.LARGE, animal.getSize());
+    }
+
+    @Test
+    public void testMorph() {
+        Animal morphedAnimal = animal.morph();
+        assertTrue(morphedAnimal == animal);
     }
 }

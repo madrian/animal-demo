@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PhonyParrotUnitTest {
     private Animal animal;
@@ -39,5 +40,21 @@ public class PhonyParrotUnitTest {
     @Test
     public void testSing() {
         assertEquals("Riiiiing, riiiiing.", animal.sing());
+    }
+
+    @Test
+    public void testEatOwnKind() {
+        assertEquals("I don't eat my own kind.", animal.eatOwnKind());
+    }
+
+    @Test
+    public void testMakeJoke() {
+        assertEquals("I don't have a joke.", animal.makeJoke());
+    }
+
+    @Test
+    public void testMorph() {
+        Animal morphedAnimal = animal.morph();
+        assertTrue(morphedAnimal == animal);
     }
 }

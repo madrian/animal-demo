@@ -15,4 +15,6 @@ public interface Animal {
     String makeJoke();
 
     String eatOwnKind();
+
+    Animal morph();
 }

@@ -1,6 +1,7 @@
 package com.example.animals;
 
 import com.example.model.AbstractAnimal;
+import com.example.model.Animal;
 import com.example.model.AnimalColor;
 import com.example.model.AnimalSize;
 import org.junit.After;
@@ -8,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ClownfishUnitTest {
     private Clownfish animal;
@@ -60,5 +62,11 @@ public class ClownfishUnitTest {
     @Test
     public void testSize() {
         assertEquals(AnimalSize.SMALL, animal.getSize());
+    }
+
+    @Test
+    public void testMorph() {
+        Animal morphedAnimal = animal.morph();
+        assertTrue(morphedAnimal == animal);
     }
 }
