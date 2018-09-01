@@ -4,6 +4,8 @@ import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.example.util.AnimalHelper.*;
+
 /**
  * Abstract base class of the <code>Animal</code> interface.
  */
@@ -25,38 +27,40 @@ public abstract class AbstractAnimal implements Animal {
 
     @Override
     public String walk() {
-        String message = canWalk() ? Ability.WALK.getMessage()
-                : Ability.WALK.getErrorMessage();
+        String message = canWalk(abilities)
+                ? Ability.WALK.getMessage() : Ability.WALK.getErrorMessage();
         log(message);
         return message;
     }
 
     @Override
     public String fly() {
-        String message = canFly() ? Ability.FLIGHT.getMessage()
-                : Ability.FLIGHT.getErrorMessage();
+        String message = canFly(abilities)
+                ? Ability.FLIGHT.getMessage(): Ability.FLIGHT.getErrorMessage();
         log(message);
         return message;
     }
 
     @Override
     public String sing() {
-        String message = canSing() ? song : Ability.SING.getErrorMessage();
+        String message = canSing(abilities)
+                ? song : Ability.SING.getErrorMessage();
         log(message);
         return message;
     }
 
     @Override
     public String swim() {
-        String message = canSwim() ? Ability.SWIM.getMessage()
-                : Ability.SWIM.getErrorMessage();
+        String message = canSwim(abilities)
+                ? Ability.SWIM.getMessage() : Ability.SWIM.getErrorMessage();
         log(message);
         return message;
     }
 
     @Override
     public String makeJoke() {
-        String message = canMakeJoke() ? Ability.MAKE_JOKE.getMessage()
+        String message = canMakeJoke(abilities)
+                ? Ability.MAKE_JOKE.getMessage()
                 : Ability.MAKE_JOKE.getErrorMessage();
         log(message);
         return message;
@@ -64,7 +68,8 @@ public abstract class AbstractAnimal implements Animal {
 
     @Override
     public String eatOwnKind() {
-        String message = canEatOwnKind() ? Ability.EAT_OWN_KIND.getMessage()
+        String message = canEatOwnKind(abilities)
+                ? Ability.EAT_OWN_KIND.getMessage()
                 : Ability.EAT_OWN_KIND.getErrorMessage();
         log(message);
         return message;
@@ -72,15 +77,15 @@ public abstract class AbstractAnimal implements Animal {
 
     @Override
     public Animal morph() {
-        String message = canMorph() ? Ability.MORPH.getMessage()
-                : Ability.MORPH.getErrorMessage();
+        String message = canMorph(abilities)
+                ? Ability.MORPH.getMessage() : Ability.MORPH.getErrorMessage();
         log(message);
 
         return getMorphedAnimal();
     }
 
     /**
-     * Animals that has <code>Ability.MORPH</code> can override this method
+     * Animals that have <code>Ability.MORPH</code> can override this method
      * to get the new morphed Animal.
      *
      * <p>
@@ -98,33 +103,6 @@ public abstract class AbstractAnimal implements Animal {
         System.out.println(message);
     }
 
-    protected boolean canWalk() {
-        return abilities.contains(Ability.WALK);
-    }
-
-    protected boolean canFly() {
-        return abilities.contains(Ability.FLIGHT);
-    }
-
-    protected boolean canSing() {
-        return abilities.contains(Ability.SING);
-    }
-
-    protected boolean canSwim() {
-        return abilities.contains(Ability.SWIM);
-    }
-
-    protected boolean canMakeJoke() {
-        return abilities.contains(Ability.MAKE_JOKE);
-    }
-
-    protected boolean canEatOwnKind() {
-        return abilities.contains(Ability.EAT_OWN_KIND);
-    }
-
-    protected boolean canMorph() {
-        return abilities.contains(Ability.MORPH);
-    }
 
     protected void setAllAbilities() {
         abilities = new HashSet<>();
@@ -141,6 +119,7 @@ public abstract class AbstractAnimal implements Animal {
      * --------
      */
 
+    @Override
     public Set<Ability> getAbilities() {
         return abilities;
     }

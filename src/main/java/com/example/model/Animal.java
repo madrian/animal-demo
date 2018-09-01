@@ -1,7 +1,9 @@
 package com.example.model;
 
+import java.util.Set;
+
 /**
- * Defines an animal and its capabilities.
+ * Defines an animal and its abilities.
  */
 public interface Animal {
     String walk();
@@ -17,4 +19,6 @@ public interface Animal {
     String eatOwnKind();
 
     Animal morph();
+
+    Set<Ability> getAbilities();
 }

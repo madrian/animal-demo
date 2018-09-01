@@ -1,6 +1,9 @@
 package com.example.animals;
 
+import com.example.model.Ability;
 import com.example.model.Animal;
+
+import java.util.Set;
 
 /**
  * Rooster implementation without inheritance.
@@ -54,5 +57,10 @@ public class Rooster implements Animal {
     @Override
     public Animal morph() {
         return this;
+    }
+
+    @Override
+    public Set<Ability> getAbilities() {
+        return chicken.getAbilities();
     }
 }
