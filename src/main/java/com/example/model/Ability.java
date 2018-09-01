@@ -4,7 +4,10 @@ public enum Ability {
     WALK("I am walking.", "I cannot walk."),
     FLIGHT("I am flying.", "I cannot fly."),
     SWIM("I am swimming.", "I cannot swim."),
-    SING("I am singing.", "I cannot sing.");
+    SING("I am singing.", "I cannot sing."),
+
+    MAKE_JOKE("I have a joke.", "I don't have a joke."),
+    EAT_OWN_KIND("I eat my own kind.", "I don't eat my own kind.");
 
     Ability(String message, String errorMessage) {
         this.message = message;

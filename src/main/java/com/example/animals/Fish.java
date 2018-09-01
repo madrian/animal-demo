@@ -3,6 +3,9 @@ package com.example.animals;
 import com.example.model.Ability;
 import com.example.model.AbstractAnimal;
 
+/**
+ * Fish implementation of an <code>Animal</code>.
+ */
 public class Fish extends AbstractAnimal {
 
     public Fish() {

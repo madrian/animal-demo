@@ -13,10 +13,12 @@ public class Rooster implements Animal {
         chicken = new Chicken();
     }
 
+    @Override
     public String walk() {
         return chicken.walk();
     }
 
+    @Override
     public String fly() {
         return chicken.fly();
     }
@@ -26,6 +28,7 @@ public class Rooster implements Animal {
      *
      * @return rooster song
      */
+    @Override
     public String sing() {
         String message = "Cock-a-doodle-doo.";
         //TODO refactor log in AbstractAnimal to a util method
@@ -33,7 +36,18 @@ public class Rooster implements Animal {
         return message;
     }
 
+    @Override
     public String swim() {
         return chicken.swim();
+    }
+
+    @Override
+    public String makeJoke() {
+        return chicken.makeJoke();
+    }
+
+    @Override
+    public String eatOwnKind() {
+        return chicken.eatOwnKind();
     }
 }

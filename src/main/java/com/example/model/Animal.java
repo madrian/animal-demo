@@ -11,4 +11,8 @@ public interface Animal {
     String sing();
 
     String swim();
+
+    String makeJoke();
+
+    String eatOwnKind();
 }

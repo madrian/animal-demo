@@ -1,6 +1,5 @@
 package com.example.model;
 
-import javax.accessibility.AccessibleKeyBinding;
 import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,9 +10,13 @@ import java.util.Set;
 public abstract class AbstractAnimal implements Animal {
     protected Set<Ability> abilities = new HashSet<>();
     protected String song;
+    protected AnimalColor color;
+    protected AnimalSize size;
 
     protected AbstractAnimal() {
         setAllAbilities();
+        abilities.remove(Ability.MAKE_JOKE);
+        abilities.remove(Ability.EAT_OWN_KIND);
         song = Ability.SING.getMessage();
     }
 
@@ -48,6 +51,22 @@ public abstract class AbstractAnimal implements Animal {
         return message;
     }
 
+    @Override
+    public String makeJoke() {
+        String message = canMakeJoke() ? Ability.MAKE_JOKE.getMessage()
+                : Ability.MAKE_JOKE.getErrorMessage();
+        log(message);
+        return message;
+    }
+
+    @Override
+    public String eatOwnKind() {
+        String message = canEatOwnKind() ? Ability.EAT_OWN_KIND.getMessage()
+                : Ability.EAT_OWN_KIND.getErrorMessage();
+        log(message);
+        return message;
+    }
+
     public void log(String message) {
         System.out.println(message);
     }
@@ -67,7 +86,15 @@ public abstract class AbstractAnimal implements Animal {
     protected boolean canSwim() {
         return abilities.contains(Ability.SWIM);
     }
-    
+
+    protected boolean canMakeJoke() {
+        return abilities.contains(Ability.MAKE_JOKE);
+    }
+
+    protected boolean canEatOwnKind() {
+        return abilities.contains(Ability.EAT_OWN_KIND);
+    }
+
     protected void setAllAbilities() {
         abilities = new HashSet<>();
         EnumSet.allOf(Ability.class)
@@ -76,5 +103,22 @@ public abstract class AbstractAnimal implements Animal {
 
     protected void removeAllAbilities() {
         abilities = new HashSet<>();
+    }
+
+    /* --------
+     * getters
+     * --------
+     */
+
+    public Set<Ability> getAbilities() {
+        return abilities;
+    }
+
+    public AnimalColor getColor() {
+        return color;
+    }
+
+    public AnimalSize getSize() {
+        return size;
     }
 }
