@@ -5,7 +5,7 @@ import com.example.model.AnimalColor;
 import com.example.model.AnimalSize;
 
 /**
- * Shark implementation of a <code>Fish</code>.
+ * Clownfish implementation of a <code>Fish</code>.
  */
 public class Clownfish extends Fish {
 
