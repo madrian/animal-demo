@@ -1,14 +1,20 @@
 package com.example.animals;
 
-import com.example.model.Ability;
+import com.example.model.AbilityMessage;
+import com.example.model.SwimAbility;
 
 /**
- * Duck implementation of an <code>Animal</code>.
+ * A <code>Duck</code> is a flying bird that can also swim.
+ *
  */
-public class Duck extends Bird {
+public class Duck extends FlyingBird implements SwimAbility {
 
     public Duck() {
         song = "Quack, quack.";
-        abilities.add(Ability.SWIM);
+    }
+
+    @Override
+    public String swim() {
+        return executeAbility(AbilityMessage.SWIM);
     }
 }

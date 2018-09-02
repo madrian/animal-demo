@@ -4,10 +4,11 @@ import com.example.model.ParrotType;
 import com.example.model.SingAbility;
 
 /**
- * Parrot inherits <code>Bird</code> but mimics an animal friend.
+ * A <code>Parrot</code> inherits a <code>FlyingBird</code> but mimics
+ * any singing friend.
  *
  */
-public class Parrot extends Bird {
+public class Parrot extends FlyingBird {
     private ParrotType type;
     private SingAbility friend;
 

@@ -1,18 +1,17 @@
 package com.example.animals;
 
-import com.example.model.ParrotType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class PhonyParrotUnitTest {
-    private Parrot animal;
+public class FlyingBirdUnitTest {
+    private FlyingBird animal;
 
     @Before
     public void setUp() {
-        animal = new Parrot(ParrotType.PHONY_PARROT);
+        animal = new FlyingBird();
     }
 
     @After
@@ -32,6 +31,6 @@ public class PhonyParrotUnitTest {
 
     @Test
     public void testSing() {
-        assertEquals("Riiiiing, riiiiing.", animal.sing());
+        assertEquals("Tweet, tweet.", animal.sing());
     }
 }

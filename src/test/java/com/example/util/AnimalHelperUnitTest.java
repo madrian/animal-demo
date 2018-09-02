@@ -2,7 +2,6 @@ package com.example.util;
 
 import com.example.animals.*;
 import com.example.model.Animal;
-import com.example.model.ParrotType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,12 +18,21 @@ public class AnimalHelperUnitTest {
     @Before
     public void setUp() {
         animals = Arrays.asList(
-                new Bird(), new Butterfly(), new Caterpillar(),
-                new Chicken(), new Clownfish(), new Dolphin(),
-                new Duck(), new Fish(),
+                new Bird(),
+                new Butterfly(),
+                new Cat(),
+                new Caterpillar(),
+                new Chicken(),
+                new Clownfish(),
+                new Dog(),
+                new Dolphin(),
+                new Duck(),
+                new Fish(),
+                new FlyingBird(),
                 new Parrot(new Dog()),
-                new Dog(), new Cat(),
-                new Rooster(), new Shark());
+                new Rooster(),
+                new Shark()
+        );
     }
 
     @After
@@ -39,12 +47,12 @@ public class AnimalHelperUnitTest {
 
     @Test
     public void testCountWalking() {
-        assertEquals(8, countWalking(animals));
+        assertEquals(9, countWalking(animals));
     }
 
     @Test
     public void testCountSinging() {
-        assertEquals(7, countSinging(animals));
+        assertEquals(8, countSinging(animals));
     }
 
     @Test

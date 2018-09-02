@@ -1,6 +1,10 @@
 package com.example.model;
 
-public enum Ability {
+/**
+ * Enum of the ability messages.
+ *
+ */
+public enum AbilityMessage {
     WALK("I am walking.", "I cannot walk."),
     FLIGHT("I am flying.", "I cannot fly."),
     SWIM("I am swimming.", "I cannot swim."),
@@ -11,7 +15,7 @@ public enum Ability {
 
     MORPH("I am morphing.", "I cannot morph.");
 
-    Ability(String message, String errorMessage) {
+    AbilityMessage(String message, String errorMessage) {
         this.message = message;
         this.errorMessage = errorMessage;
     }

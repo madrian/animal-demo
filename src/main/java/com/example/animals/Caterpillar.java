@@ -1,23 +1,23 @@
 package com.example.animals;
 
-import com.example.model.Ability;
-import com.example.model.AbstractAnimal;
-import com.example.model.Animal;
+import com.example.model.*;
 
 /**
- * Caterpillar implementation of an <code>Animal</code>.
+ * A <code>Caterpillar</code> can walk and morph into a <code>Butterfly</code>.
+ *
  */
-public class Caterpillar extends AbstractAnimal {
+public class Caterpillar extends AbstractAnimal
+        implements WalkAbility, MorphAbility {
 
-    public Caterpillar() {
-        abilities.remove(Ability.FLIGHT);
-        abilities.remove(Ability.SING);
-        abilities.remove(Ability.SWIM);
-        abilities.add(Ability.MORPH);
+    @Override
+    public String walk() {
+        return executeAbility(AbilityMessage.WALK);
     }
 
     @Override
-    public Animal getMorphedAnimal() {
+    public Animal morph() {
+        executeAbility(AbilityMessage.MORPH);
         return new Butterfly();
     }
+
 }

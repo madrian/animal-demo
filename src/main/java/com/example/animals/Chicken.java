@@ -1,14 +1,13 @@
 package com.example.animals;
 
-import com.example.model.Ability;
-
 /**
- * Chicken implementation of an <code>Animal</code>.
+ * A <code>Chicken</code> is a non-flying bird. It sings differently than a
+ * <code>Bird</code>.
+ *
  */
 public class Chicken extends Bird {
 
     public Chicken() {
-        abilities.remove(Ability.FLIGHT);
         song = "Cluck, cluck.";
     }
 }

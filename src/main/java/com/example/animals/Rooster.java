@@ -1,17 +1,25 @@
 package com.example.animals;
 
-import com.example.model.Ability;
 import com.example.model.Animal;
+import com.example.model.SingAbility;
+import com.example.model.WalkAbility;
 
 import java.util.ResourceBundle;
-import java.util.Set;
 
 import static com.example.util.AnimalHelper.log;
 
 /**
- * Rooster implementation without inheritance.
+ * A <code>Rooster</code> is a chicken.
+ *
+ * <p>This implementation however wraps a <code>Chicken</code> but does not
+ * inherit it directly.</p>
+ *
+ * <p>A rooster can also sing in different {@link java.util.Locale}s.
+ * See the resource bundle <code>songs_xx_xx.properties</code> for the
+ * different languages.</p>
+ *
  */
-public class Rooster implements Animal {
+public class Rooster implements Animal, WalkAbility, SingAbility {
     private Chicken chicken;
     ResourceBundle bundle;
 
@@ -26,11 +34,6 @@ public class Rooster implements Animal {
         return chicken.walk();
     }
 
-    @Override
-    public String fly() {
-        return chicken.fly();
-    }
-
     /**
      * A rooster is just a chicken but sings differently.
      *
@@ -41,30 +44,5 @@ public class Rooster implements Animal {
         String message = bundle.getString("rooster.song");
         log(message);
         return message;
-    }
-
-    @Override
-    public String swim() {
-        return chicken.swim();
-    }
-
-    @Override
-    public String makeJoke() {
-        return chicken.makeJoke();
-    }
-
-    @Override
-    public String eatOwnKind() {
-        return chicken.eatOwnKind();
-    }
-
-    @Override
-    public Animal morph() {
-        return this;
-    }
-
-    @Override
-    public Set<Ability> getAbilities() {
-        return chicken.getAbilities();
     }
 }

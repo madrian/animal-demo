@@ -1,15 +1,31 @@
 package com.example.animals;
 
-import com.example.model.Ability;
+import com.example.model.AbilityMessage;
 import com.example.model.AbstractAnimal;
+import com.example.model.SingAbility;
+import com.example.model.WalkAbility;
 
 /**
- * Bird implementation of an <code>Animal</code>.
+ * A <code>Bird</code> can walk and sing.
+ *
+ * <p>This is a top category bird and since not all birds can fly, this does
+ * not fly. Use {@link FlyingBird} for the common flying birds.</p>
+ *
  */
-public class Bird extends AbstractAnimal {
+public class Bird extends AbstractAnimal
+        implements WalkAbility, SingAbility {
 
     public Bird() {
         song = "Tweet, tweet.";
-        abilities.remove(Ability.SWIM);
+    }
+
+    @Override
+    public String walk() {
+        return executeAbility(AbilityMessage.WALK);
+    }
+
+    @Override
+    public String sing() {
+        return executeAbility(AbilityMessage.SING, song);
     }
 }

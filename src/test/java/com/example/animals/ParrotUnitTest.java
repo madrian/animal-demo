@@ -1,16 +1,14 @@
 package com.example.animals;
 
-import com.example.model.Animal;
 import com.example.object.Phone;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class ParrotUnitTest {
-    private Animal animal;
+    private Parrot animal;
 
     @Before
     public void setUp() {
@@ -37,31 +35,6 @@ public class ParrotUnitTest {
     public void testSing() {
         animal = new Parrot();
         assertEquals("Tweet, tweet.", animal.sing());
-    }
-
-    @Test
-    public void testSwim() {
-        animal = new Parrot();
-        assertEquals("I cannot swim.", animal.swim());
-    }
-
-    @Test
-    public void testEatOwnKind() {
-        animal = new Parrot();
-        assertEquals("I don't eat my own kind.", animal.eatOwnKind());
-    }
-
-    @Test
-    public void testMakeJoke() {
-        animal = new Parrot();
-        assertEquals("I don't have a joke.", animal.makeJoke());
-    }
-
-    @Test
-    public void testMorph() {
-        animal = new Parrot();
-        Animal morphedAnimal = animal.morph();
-        assertTrue(morphedAnimal == animal);
     }
 
     @Test

@@ -1,17 +1,16 @@
 package com.example.animals;
 
-import com.example.model.Ability;
 import com.example.model.Animal;
-
-import java.util.Set;
+import com.example.model.SwimAbility;
 
 /**
- * Dolphin implementation of an <code>Animal</code>.
+ * A <code>Dolphin</code> swims like a fish but is not a fish.
  *
  * <p>This class wraps the <code>Fish</code> class thus sharing the same
- * attributes and behaviors with fish.</p>
+ * attributes and behaviors with fish but does not inherit them.</p>
+ *
  */
-public class Dolphin implements Animal {
+public class Dolphin implements Animal, SwimAbility {
     private Fish fish;
 
     public Dolphin() {
@@ -19,42 +18,7 @@ public class Dolphin implements Animal {
     }
 
     @Override
-    public String walk() {
-        return fish.walk();
-    }
-
-    @Override
-    public String fly() {
-        return fish.fly();
-    }
-
-    @Override
-    public String sing() {
-        return fish.sing();
-    }
-
-    @Override
-    public String swim() {
+    public String swim () {
         return fish.swim();
-    }
-
-    @Override
-    public String makeJoke() {
-        return fish.makeJoke();
-    }
-
-    @Override
-    public String eatOwnKind() {
-        return fish.eatOwnKind();
-    }
-
-    @Override
-    public Animal morph() {
-        return this;
-    }
-
-    @Override
-    public Set<Ability> getAbilities() {
-        return fish.getAbilities();
     }
 }

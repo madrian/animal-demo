@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CaterpillarUnitTest {
-    private Animal animal;
+    private Caterpillar animal;
 
     @Before
     public void setUp() {
@@ -24,31 +24,6 @@ public class CaterpillarUnitTest {
     @Test
     public void testWalk() {
         assertEquals("I am walking.", animal.walk());
-    }
-
-    @Test
-    public void testFly() {
-        assertEquals("I cannot fly.", animal.fly());
-    }
-
-    @Test
-    public void testSing() {
-        assertEquals("I cannot sing.", animal.sing());
-    }
-
-    @Test
-    public void testSwim() {
-        assertEquals("I cannot swim.", animal.swim());
-    }
-
-    @Test
-    public void testEatOwnKind() {
-        assertEquals("I don't eat my own kind.", animal.eatOwnKind());
-    }
-
-    @Test
-    public void testMakeJoke() {
-        assertEquals("I don't have a joke.", animal.makeJoke());
     }
 
     @Test

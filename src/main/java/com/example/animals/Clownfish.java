@@ -1,17 +1,24 @@
 package com.example.animals;
 
-import com.example.model.Ability;
+import com.example.model.AbilityMessage;
 import com.example.model.AnimalColor;
 import com.example.model.AnimalSize;
+import com.example.model.MakeJokeAbility;
 
 /**
- * Clownfish implementation of a <code>Fish</code>.
+ * A <code>Clownfish</code> is a <code>Fish</code> that can make jokes.
+ *
  */
-public class Clownfish extends Fish {
+public class Clownfish extends Fish implements MakeJokeAbility {
 
     public Clownfish() {
         color = AnimalColor.ORANGE;
         size = AnimalSize.SMALL;
-        abilities.add(Ability.MAKE_JOKE);
     }
+
+    @Override
+    public String makeJoke() {
+        return executeAbility(AbilityMessage.MAKE_JOKE);
+    }
+
 }

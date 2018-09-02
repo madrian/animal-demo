@@ -1,16 +1,18 @@
 package com.example.animals;
 
-import com.example.model.Ability;
+import com.example.model.AbilityMessage;
 import com.example.model.AbstractAnimal;
+import com.example.model.SwimAbility;
 
 /**
- * Fish implementation of an <code>Animal</code>.
+ * A <code>Fish</code> can swim.
+ *
  */
-public class Fish extends AbstractAnimal {
+public class Fish extends AbstractAnimal
+        implements SwimAbility {
 
-    public Fish() {
-        abilities.remove(Ability.SING);
-        abilities.remove(Ability.WALK);
-        abilities.remove(Ability.FLIGHT);
+    @Override
+    public String swim() {
+        return executeAbility(AbilityMessage.SWIM);
     }
 }
