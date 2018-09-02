@@ -99,10 +99,6 @@ public abstract class AbstractAnimal implements Animal {
         return this;
     }
 
-    public void log(String message) {
-        System.out.println(message);
-    }
-
 
     protected void setAllAbilities() {
         abilities = new HashSet<>();

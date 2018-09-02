@@ -5,6 +5,8 @@ import com.example.model.Animal;
 
 import java.util.Set;
 
+import static com.example.util.AnimalHelper.log;
+
 /**
  * Rooster implementation without inheritance.
  */
@@ -34,7 +36,7 @@ public class Rooster implements Animal {
     @Override
     public String sing() {
         String message = "Cock-a-doodle-doo.";
-        //TODO refactor log in AbstractAnimal to a util method
+        log(message);
         System.out.println(message);
         return message;
     }

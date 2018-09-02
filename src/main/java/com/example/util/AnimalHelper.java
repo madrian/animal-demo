@@ -70,4 +70,9 @@ public class AnimalHelper {
     public static boolean canMorph(Set<Ability> abilities) {
         return abilities.contains(Ability.MORPH);
     }
+
+    public static void log(String message) {
+        System.out.println(message);
+    }
+
 }

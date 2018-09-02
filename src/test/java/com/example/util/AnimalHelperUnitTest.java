@@ -22,7 +22,8 @@ public class AnimalHelperUnitTest {
                 new Bird(), new Butterfly(), new Caterpillar(),
                 new Chicken(), new Clownfish(), new Dolphin(),
                 new Duck(), new Fish(),
-                new Parrot(ParrotType.DOGGY_PARROT),
+                new Parrot(new Dog()),
+                new Dog(), new Cat(),
                 new Rooster(), new Shark());
     }
 
@@ -38,17 +39,17 @@ public class AnimalHelperUnitTest {
 
     @Test
     public void testCountWalking() {
-        assertEquals(6, countWalking(animals));
+        assertEquals(8, countWalking(animals));
     }
 
     @Test
     public void testCountSinging() {
-        assertEquals(5, countSinging(animals));
+        assertEquals(7, countSinging(animals));
     }
 
     @Test
     public void testCountSwimming() {
-        assertEquals(5, countSwimming(animals));
+        assertEquals(7, countSwimming(animals));
     }
 
     @Test

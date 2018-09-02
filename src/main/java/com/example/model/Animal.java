@@ -5,12 +5,10 @@ import java.util.Set;
 /**
  * Defines an animal and its abilities.
  */
-public interface Animal {
+public interface Animal extends SingAbility {
     String walk();
 
     String fly();
-
-    String sing();
 
     String swim();
 
