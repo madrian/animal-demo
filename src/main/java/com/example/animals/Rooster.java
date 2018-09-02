@@ -3,6 +3,7 @@ package com.example.animals;
 import com.example.model.Ability;
 import com.example.model.Animal;
 
+import java.util.ResourceBundle;
 import java.util.Set;
 
 import static com.example.util.AnimalHelper.log;
@@ -12,10 +13,12 @@ import static com.example.util.AnimalHelper.log;
  */
 public class Rooster implements Animal {
     private Chicken chicken;
+    ResourceBundle bundle;
 
     public Rooster() {
         //a rooster is just a chicken inside!
         chicken = new Chicken();
+        bundle = ResourceBundle.getBundle("songs");
     }
 
     @Override
@@ -35,9 +38,8 @@ public class Rooster implements Animal {
      */
     @Override
     public String sing() {
-        String message = "Cock-a-doodle-doo.";
+        String message = bundle.getString("rooster.song");
         log(message);
-        System.out.println(message);
         return message;
     }
 
