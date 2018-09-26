@@ -20,11 +20,6 @@ public class Bird extends AbstractAnimal
     }
 
     @Override
-    public String walk() {
-        return executeAbility(AbilityMessage.WALK);
-    }
-
-    @Override
     public String sing() {
         return executeAbility(AbilityMessage.SING, song);
     }

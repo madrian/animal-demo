@@ -46,4 +46,15 @@ public class AnimalHelper {
         System.out.println(message);
     }
 
+    public static String executeAbility(AbilityMessage abilityMessage,
+                                    String customMessage) {
+        String s = customMessage == null || customMessage.length() == 0 ?
+                abilityMessage.getMessage() : customMessage;
+        log(s);
+        return s;
+    }
+
+    public static String executeAbility(AbilityMessage abilityMessage) {
+        return executeAbility(abilityMessage, null);
+    }
 }
